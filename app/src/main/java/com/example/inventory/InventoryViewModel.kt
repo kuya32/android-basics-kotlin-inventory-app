@@ -37,6 +37,10 @@ class InventoryViewModel(
         }
         return true
     }
+
+    fun retrieveItem(id: Int): LiveData<Item> {
+        return itemDao.getItem(id).asLiveData()
+    }
 }
 
 class InventoryViewModelFactory(
